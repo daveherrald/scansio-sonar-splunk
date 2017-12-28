@@ -81,8 +81,13 @@ More details available at https://scans.io
 The following example downloads the "SSL Certificates" study files from scans.io, using 16 worker processes, and storing the results under a directory named /sonar/sonar.ssl. Again, we recommend using screen(not shown below) for long running command line processes like this one.
 
 ```
-python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsize 16
+$python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsize 16
 ```
+
+## Load SSl Certificates (sonar.ssl) Data
+### Prerequisites
+### Load Certificates
+### Load Host/Certificate Observation Data
 
 # Python Version
 All scripts were developed and tested using Python 2.7.x. A conscious, though admittedly somewhat painful, decision was made to avoid Python 3 becasue portion of this code may someday be integrated more tightly into Splunk (e.g. as a modular input), and splunk does not currently support Python 3. 
