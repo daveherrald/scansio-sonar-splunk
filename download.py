@@ -245,7 +245,7 @@ def main(argv):
     stream_handler = logging.StreamHandler(sys.stdout)
     logger.addHandler(stream_handler)
 
-    DEFAULT_DOWNLOAD_PATH = u'/ssl/sonar'
+    DEFAULT_DOWNLOAD_PATH = u'/sonar'
     DEFAULT_STUDY = u'SSL Certificates'
     DEFAULT_POOLSIZE = 1
 
@@ -272,7 +272,7 @@ def main(argv):
                         help=u'Number of processes to spawn. (default: {0})'.format(DEFAULT_POOLSIZE))
 
     parser.add_argument('--studysize', action="store_true", 
-                        help=u'Number of processes to spawn')
+                        help=u'Return the current size of this study on the scans.io server. Use --study to specify a study.')
 
     args = parser.parse_args(argv[1:])
 
