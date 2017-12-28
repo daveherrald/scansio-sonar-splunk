@@ -86,6 +86,10 @@ $python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsi
 
 ## Load SSl Certificates (sonar.ssl) Data
 ### Prerequisites
+1. Download sonar.ssl data using download.py as described above.
+2. Download [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). The file called splunk_http_event_collector.py must be in the same directory as loadcerts.py.
+3. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector (HEC) key.
+
 ### Load Certificates
 ### Load Host/Certificate Observation Data
 
