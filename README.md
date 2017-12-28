@@ -32,7 +32,7 @@ optional arguments:
                         server. Use --study to specify a study.
 ```
 
-### View a list of available studies
+### View the list of available studies
 
 Use the --liststudies option to list the studies available at https://scans.io. The script downloads https://scansio/json and parses it for convenient display. The output contains the name of the study as well as the unique identifier (uniqid) and the estimated size of the stufy files in gigabytes.
 
