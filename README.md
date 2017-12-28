@@ -1,7 +1,7 @@
 # scansio-sonar-splunk
 
 ## download.py
-download.py downloads the files associated with a particular study available at https://scans.io. The script uses Python multiprocessing to parallelize the task.
+download.py downloads the files associated with a particular study available at https://scans.io. This project currently focuses on the "SSL Certificates" (sonar.ssl) and "HTTPS (TCP/443)" (sonar.https) studies, however download.py can be used to download any of the available studies.
 
 Summary of options:
 
