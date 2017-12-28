@@ -2,6 +2,7 @@
 
 ## download.py
 
+```
 $ python ./download.py -h
 usage: download.py [-h] [--downloadpath DOWNLOADPATH] [--verbose]
                    [--liststudies] [--study STUDY] [--listurls] [--listfiles]
@@ -26,6 +27,7 @@ optional arguments:
   --poolsize POOLSIZE   Number of processes to spawn. (default: 1)
   --studysize           Return the current size of this study on the scans.io
                         server. Use --study to specify a study.
+```
 
 
 # Python Version
