@@ -3,7 +3,7 @@
 ## download.py
 download.py downloads the files associated with a particular study available at https://scans.io. This script downloads the files and stores them locally. Other scripts in this repository are reponsible for parsing, enriching, and loading the files into SPlunk. This project currently focuses on the "SSL Certificates" (sonar.ssl) and "HTTPS (TCP/443)" (sonar.https) studies, however download.py can be used to download any of the available studies.
 
-###Summary of options:
+### Summary of options:
 
 ```
 $ python ./download.py -h
