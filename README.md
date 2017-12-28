@@ -34,7 +34,7 @@ optional arguments:
 
 Use the --liststudies option to list the studies available at https://scans.io. The script first downloads https://scansio/json and parses it for convenient display.
 ```
-[ec2-user@ip-172-31-32-157 scansio-sonar-splunk]$ python ./download.py --liststudies
+$ python ./download.py --liststudies
 
 Study                                                                       Uniqe ID(uniqid)          Size (GB)
 --------------------------------------------------------------------------- ------------------------- ---------
