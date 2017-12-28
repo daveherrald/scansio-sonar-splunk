@@ -80,3 +80,6 @@ More details available at https://scans.io
 
 # Python Version
 All scripts were developed and tested using Python 2.7.x. A conscious, though admittedly somewhat painful, decision was made to avoid Python 3 becasue portion of this code may someday be integrated more tightly into Splunk (e.g. as a modular input), and splunk does not currently support Python 3. 
+
+# About the authors
+This project was created by [Dave Herrald](https://github.com/daveherrald) and [Ryan Kovar](https://github.com/rkovar) 
