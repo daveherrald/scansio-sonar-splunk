@@ -84,7 +84,7 @@ The following example downloads the "SSL Certificates" study files from scans.io
 $python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsize 16
 ```
 
-## Load SSL Certificates (sonar.ssl) Data
+## Load SSL Certificates (sonar.ssl) data
 ### Prerequisites
 1. Download sonar.ssl data using download.py as described above.
 2. Download [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). The file called splunk_http_event_collector.py must be in the same directory as loadcerts.py.
@@ -96,18 +96,18 @@ $ sh ./update_geoip.sh
 ```
 
 ### Load Certificates
-### Load Host/Certificate Observation Data
+### Load host/certificate observation data
 
-## Load HTTPS (TCP/44) (sonar.https) Data
+## Load HTTPS (TCP/44) (sonar.https) data
 ### Prerequisites
 1. Download sonar.https data using download.py as described above.
 2. Download [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). The file called splunk_http_event_collector.py must be in the same directory as loadcerts.py.
 3. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector(HEC) key.
 
 
-### Load HTTPS GET Response Data
+### Load HTTPS GET response data
 
-# Python Version
+# Python version
 All scripts were developed and tested using Python 2.7.x. A conscious, though admittedly somewhat painful, decision was made to avoid Python 3 becasue portion of this code may someday be integrated more tightly into Splunk (e.g. as a modular input), and splunk does not currently support Python 3. 
 
 # Contributions
