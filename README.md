@@ -40,7 +40,7 @@ optional arguments:
 
 ### View the list of available studies
 
-Use the --liststudies option to list the studies available at https://scans.io. The script downloads https://scansio/json and parses it for convenient display. The output contains the name of the study as well as the unique identifier (uniqid) and the estimated size of the stufy files in gigabytes.
+Use the --liststudies option to list the studies available at https://scans.io. The script downloads https://scansio/json and parses it for convenient display. The output contains the name of the study as well as the unique identifier (uniqid) and the estimated size of the stufy files in gigabytes. The example below is a point in time (12/28/2017). You should download the script and run it yourself to view the most current output.
 
 ```
 $ python ./download.py --liststudies
