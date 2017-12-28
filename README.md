@@ -1,6 +1,6 @@
 # scansio-sonar-splunk
 
-The goal of this project is to make it possible for security researchers, threat intelligence analysts, and security operations teams to take advantage of the Internet-Wide Scan Data Repository (https://scans.io) study data using Splunk. The tools included here download, parse, and enrich scan study data before loading it into Splunk for analysis. 
+The goal of this project is to make it possible for security researchers, threat intelligence analysts, and security operations teams to take advantage of the [Internet-Wide Scan Data Repository](https://scans.io) study data using Splunk. The tools included here download, parse, and enrich scan study data before loading it into Splunk for analysis. 
 
 This project is inspired by the excellent work by [Mark Parsons](https://github.com/mpars0ns). Significant portions of the code in this repository are copied with permission from [scansio-sonar-es](mpars0ns/scansio-sonar-es)
 
