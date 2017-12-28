@@ -1,6 +1,7 @@
 # scansio-sonar-splunk
 
 ## download.py
+download.py downloads the files associated with a particular study available at https://scans.io. The script uses Python multiprocessing to parallelize the task.
 
 ```
 $ python ./download.py -h
