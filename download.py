@@ -34,26 +34,6 @@ def get_scans_io_json(url='https://scans.io/json'):
         else: return None
     else:
         return None
-
-#def get_download_list(feed, study, path, verbose=False):
-#    return get_study_file_metadata(feed, study, verbose)
-    
-#def get_download_list(feed, study, path, verbose=False):
-#    if 'studies' in feed:
-#        for result in feed['studies']:
-#            if result['name'] == study:
-#                download_list = []
-#                for res in result['files']:
-#                    name = res['name']
-#                    if name.endswith(suffix):
-#                        m = re.search('.*\/(.*)$', name)
-#                        normalized_name = m.group(1)
-#                        safe_study = study.replace('/', '_')
-#                        fqfile = '{0}/{1}/{2}'.format(path, safe_study, normalized_name)
-#                        download_list.append([fqfile, res, '{0}/{1}'.format(path, safe_study)])
-#        return download_list
-
-
 def download_file(file_q, downloadpath, study, verbose=False):
     logger = logging.getLogger("SPLUNKSONAR")
     if verbose:
