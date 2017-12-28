@@ -81,7 +81,7 @@ More details available at https://scans.io
 The following example downloads the "SSL Certificates" study files from scans.io, using 16 worker processes, and storing the results under a directory named /sonar/sonar.ssl. Again, we recommend using screen(not shown below) for long running command line processes like this one.
 
 ```
-python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsize 16
+$python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsize 16
 ```
 
 # Python Version
