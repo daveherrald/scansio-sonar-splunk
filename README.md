@@ -1,7 +1,11 @@
 # scansio-sonar-splunk
 
+The goal of this project is to make it possible for security researchers, threat intelligence analysts, and security operations teams to take advantage of the Internet-Wide Scan Data Repository (https://scans.io) study data using Splunk. The tools included here download, parse, and enrich scan study data before loading it into Splunk for analysis. 
+
+This project is inspired by the excellent work by [Mark Parsons](https://github.com/mpars0ns). Significant portions of the code in this repository are copied with permission from [scansio-sonar-es](mpars0ns/scansio-sonar-es)
+
 ## download.py
-download.py downloads the files associated with a particular study available at https://scans.io. This script downloads the files and stores them locally. Other scripts in this repository are reponsible for parsing, enriching, and loading the files into SPlunk. This project currently focuses on the "SSL Certificates" (sonar.ssl) and "HTTPS (TCP/443)" (sonar.https) studies, however download.py can be used to download any of the available studies.
+download.py retrieves the files associated with a particular study available at https://scans.io. This script downloads the files and stores them locally. Other scripts in this repository are reponsible for parsing, enriching, and loading the files into Splunk. This project currently focuses on the "SSL Certificates" (sonar.ssl) and "HTTPS (TCP/443)" (sonar.https) studies, however download.py can be used generally to download any of the available studies. Integrity of the downloaded files is validated using a checksum. If a file has already been downloaded, and the checksum matches, it will not be downloaded again. download.py can use Python multi-processing to parrallelize the download process. download.py is often a long-running process so we recommend using screen.
 
 ### Summary of options:
 
