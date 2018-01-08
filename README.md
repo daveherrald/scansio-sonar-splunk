@@ -101,6 +101,9 @@ python ./loadcerts.py --downloadpath <path to sonar.ssl study data> --poolsize <
 ```
 
 ### Load host/certificate observation data
+```
+python ./loadhosts.py --downloadpath <path to sonar.ssl study data> --poolsize <number of parallel processes> --hec_key <http Event Collector token configured in Splunk>  --splunk_indexer <IP or Hostname> --splunk_index <index name> --splunk_sourcetype <sourcetype>
+```
 
 ## Load HTTPS (TCP/44) (sonar.https) data
 ### Prerequisites
