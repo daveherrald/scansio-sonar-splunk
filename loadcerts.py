@@ -16,7 +16,8 @@ import multiprocessing
 import random
 
 
-def process_certs_file(file_queue, key, logger, hostlist=['localhost'], batchsize=16384, index='sonarsslcert', sourcetype='sonarsslcert'):
+def process_certs_file(file_queue, key, hostlist=['localhost'], index='sonarsslcert', sourcetype='sonarsslcert', batchsize=16384):
+    logger = logging.getLogger("SSLImporter")
     while True:
         host = random.choice(hostlist)
         print host
@@ -62,19 +63,37 @@ def main(argv):
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(logger_format)
     logger.addHandler(stream_handler)
-    parser = argparse.ArgumentParser()   
-    numproc = 64
 
-    #Cert load test
-    directory='/sonar/sonar.ssl'
-    http_event_collector_key = "cffe598c-8363-490d-ab32-a42e5a65c4fd"
+    DEFAULT_DOWNLOAD_PATH = u'/sonar/sonar.ssl'
+    DEFAULT_POOLSIZE = 1
+    DEFAULT_SPLUNK_HOST = u'127.0.0.1'
+    DEFAULT_SPLUNK_INDEX = "sonarsslcert"
+    DEFAULT_SPLUNK_SOURCETYPE = "sonarsslcert"
+
+
+    parser = argparse.ArgumentParser()  
+    parser.add_argument('--downloadpath', default=DEFAULT_DOWNLOAD_PATH,
+                        help=u'Location to read downloaded files. (default {0})'.format(DEFAULT_DOWNLOAD_PATH)) 
+    parser.add_argument('--poolsize', default=DEFAULT_POOLSIZE, 
+                        help=u'Number of processes to spawn. (default: {0})'.format(DEFAULT_POOLSIZE))
+    parser.add_argument('--hec_key', default='', 
+                        help=u'Splunk HTTP Event Collector(HEC) token. (default: <blank>)')
+    parser.add_argument('--splunk_indexer', default=DEFAULT_SPLUNK_HOST, 
+                        help=u'Splunk indexer or load balancer. (default: {})'.format(DEFAULT_SPLUNK_HOST))
+    parser.add_argument('--splunk_index', default=DEFAULT_SPLUNK_INDEX, 
+                        help=u'Splunk index. (default: {})'.format(DEFAULT_SPLUNK_INDEX))
+    parser.add_argument('--splunk_sourcetype', default=DEFAULT_SPLUNK_SOURCETYPE, 
+                        help=u'Splunk sourcetype. (default: {})'.format(DEFAULT_SPLUNK_SOURCETYPE))
+    args = parser.parse_args(argv[1:])
+
+    numproc = int(args.poolsize)
 
     file_queue = multiprocessing.Queue()
-    pool = multiprocessing.Pool(numproc, process_certs_file,(file_queue, http_event_collector_key, logger,['34.206.168.126','34.237.203.207','34.238.205.37'],))
+    pool = multiprocessing.Pool(numproc, process_certs_file,(file_queue, args.hec_key,[args.splunk_indexer], args.splunk_index, args.splunk_sourcetype))
 
-    for filename in os.listdir(directory):
+    for filename in os.listdir(args.downloadpath):
         if filename.endswith("certs.gz"):
-            file_queue.put(os.path.join(directory,filename))
+            file_queue.put(os.path.join(args.downloadpath,filename))
 
     for i in range(numproc):
         file_queue.put("DONE")
