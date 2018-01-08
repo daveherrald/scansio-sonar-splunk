@@ -96,7 +96,8 @@ $ sh ./update_geoip.sh
 ```
 
 ### Load Certificates
-```python ./loadcerts.py --downloadpath <path to sonar.ssl study data> --poolsize <number of parallel processes> --hec_key <http Event Collector token configured in Splunk>  --splunk_indexer <IP or Hostname> --splunk_index <index name> --splunk_sourcetype <sourcetype>
+```
+python ./loadcerts.py --downloadpath <path to sonar.ssl study data> --poolsize <number of parallel processes> --hec_key <http Event Collector token configured in Splunk>  --splunk_indexer <IP or Hostname> --splunk_index <index name> --splunk_sourcetype <sourcetype>
 ```
 
 ### Load host/certificate observation data
