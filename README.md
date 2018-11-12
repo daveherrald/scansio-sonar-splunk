@@ -76,6 +76,9 @@ IPv4 HTTP Scans                                                             mi  
 
 More details available at https://scans.io
 ```
+### Install dependencies
+1. `pip install -r requirements.txt`
+2. Install [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). `pip install git+git://github.com/georgestarcher/Splunk-Class-httpevent.git`
 
 ### Download a study
 The following example downloads the "SSL Certificates" study files from scans.io, using 16 worker processes, and storing the results under a directory named /sonar/sonar.ssl. Again, we recommend using screen(not shown below) for long running command line processes like this one.
@@ -87,9 +90,8 @@ $python ./download.py --verbose --study sonar.ssl --downloadpath /sonar --poolsi
 ## Load SSL Certificates (sonar.ssl) data
 ### Prerequisites
 1. Download sonar.ssl data using download.py as described above.
-2. Download [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). The file called splunk_http_event_collector.py must be in the same directory as loadcerts.py.
-3. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector(HEC) key.
-4. Download latest Maxmind GeoIP Database
+2. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector(HEC) key.
+3. Download latest Maxmind GeoIP Database
 ```
 $ mkdir geoip
 $ sh ./update_geoip.sh
@@ -108,8 +110,7 @@ python ./loadhosts.py --downloadpath <path to sonar.ssl study data> --poolsize <
 ## Load HTTPS (TCP/44) (sonar.https) data
 ### Prerequisites
 1. Download sonar.https data using download.py as described above.
-2. Download [George Starcher's Splunk HTTP Event Collector Python class](https://github.com/georgestarcher/Splunk-Class-httpevent). The file called splunk_http_event_collector.py must be in the same directory as loadcerts.py.
-3. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector(HEC) key.
+2. Prepare a Splunk instance with enough processing power and storage to handle the study data. Create an index and an HTTP Event Collector(HEC) key.
 
 
 ### Load HTTPS GET response data
