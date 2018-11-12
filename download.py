@@ -254,6 +254,12 @@ def main(argv):
     parser.add_argument('--studysize', action="store_true", 
                         help=u'Return the current size of this study on the scans.io server. Use --study to specify a study.')
 
+    # check if there are no arguments
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(0)
+
+    # parse arguments
     args = parser.parse_args(argv[1:])
 
     if args.liststudies:
