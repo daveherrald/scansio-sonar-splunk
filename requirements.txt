@@ -11,4 +11,4 @@ pygeoip==0.3.2
 pyOpenSSL==18.0.0
 requests==2.20.1
 six==1.11.0
-urllib3==1.24.1
+urllib3==1.24.2
